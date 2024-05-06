@@ -94,8 +94,46 @@ Window:AddTab(<table> {
 Window:SetAccent(color)
 ```
 
-format:
-
 ```txt
 Window:SetAccent(<color3> accent)
+```
+
+
+##### **Keybind**
+```lua
+Window:SetKey(keycode)
+```
+
+```txt
+Window:SetKey(<keycode> toggleKey)
+```
+
+
+
+##### **Toggle Window**
+```lua
+Window:Toggle(false)
+```
+
+```txt
+Window:Toggle(<bool> toggled)
+```
+
+
+
+### **Tab**
+
+#### **Creating Section**
+
+```lua
+local Section = Tab:AddSection("Section", {default = false})
+```
+
+```txt
+Tab:AddSection(<table> {
+    <string> name
+    <table> options {
+        <bool> default
+    }
+})
 ```
