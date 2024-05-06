@@ -52,3 +52,14 @@ Library:AddWindow(<table> {
 })
 ```
 
+**Send Notification**
+Notification Doc:
+
+```txt
+Library:Notify(<table> {
+    <string> title
+    <string> text
+    <int> duration
+    <color3> color
+})
+```
