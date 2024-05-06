@@ -175,3 +175,137 @@ Section:AddButton(<table> {
     <void> callback
 })
 ```
+
+
+#### **Create Toggle**
+
+```lua
+local Toggle = Section:AddToggle("Toggle", {flag = "Toggle_Flag", default = false}, function(bool)
+	print("Toggle set to:", bool)
+end)
+```
+
+```txt
+Section:AddToggle(<table> {
+    <string> name
+    <table> options {
+        <bool> default
+        <string> flag
+
+    }
+    <void> callback(<bool> enabled)
+})
+```
+
+
+#### **Create Label**
+
+```lua
+local Label = Section:AddLabel("Label")
+```
+
+```txt
+Section:AddLabel(<table> {
+    <string> text
+})
+```
+
+
+#### **Create DualLabel**
+
+```lua
+local DualLabel = Section:AddDualLabel({"Dual", "Label"})
+```
+
+```txt
+Section:AddDualLabel(<table> {
+    <table> text {<string> text1, <string> text2}
+})
+```
+
+
+
+#### **Create ClipboardLabel**
+
+```lua
+local ClipboardLabel = Section:AddClipboardLabel("ClipboardLabel", function()
+	return "ClipboardLabel"
+end)
+```
+
+```txt
+Section:AddClipboardLabel(<table> {
+    <string> name
+    <void> callback()  ->  must return string
+})
+```
+
+
+#### **Create TextBox**
+
+```lua
+local Box = Section:AddBox("Box", {fireonempty = true}, function(text)
+	print(text)
+end)
+```
+
+```txt
+Section:AddBox(<table> {
+    <string> name
+    <table> options {
+        <bool> clearonfocus
+        <bool> fireonempty
+    }
+    <void> callback(<string> text)
+})
+```
+
+
+
+#### **Create Slider**
+
+```lua
+local Slider = Section:AddSlider("Slider", 1, 100, 50, {toggleable = true, default = false, flag = "Slider_Flag", fireontoggle = true, fireondrag = true, rounded = true}, function(val, bool)
+	print("Slider value:", val, " - Slider toggled:", bool)
+end)
+```
+
+```txt
+Section:AddSlider(<table> {
+    <string> name
+    <int> minValue
+    <int> maxValue
+    <int> value
+    <table> options {
+        <bool> toggleable
+        <string> flag
+        <bool> fireontoggle
+        <bool> fireondrag
+        <bool> rounded
+    }
+    <void> callback(<int> value)
+})
+```
+
+
+
+#### **Create DualLabel**
+
+```lua
+
+```
+
+```txt
+
+```
+
+
+#### **Create DualLabel**
+
+```lua
+
+```
+
+```txt
+
+```
