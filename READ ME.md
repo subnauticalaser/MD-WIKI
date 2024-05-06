@@ -152,3 +152,26 @@ Tab:Show()
 ```txt
 Tab:Hide()
 ```
+
+##### **Extra**
+
+```txt
+Tab:AddConfigs()  ->  integrated configs system (to change path, modify 'Library.Settings.ConfigPath')
+```
+
+### **Section**
+
+#### **Create Button**
+
+```lua
+local Button = Section:AddButton("Button", function()
+	print("Button has been pressed")
+end)
+```
+
+```txt
+Section:AddButton(<table> {
+    <string> name
+    <void> callback
+})
+```
