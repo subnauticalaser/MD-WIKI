@@ -15,8 +15,10 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
 
 ### Step 2
 
-**Create Window**
+**Library TUT**
 
+
+**Create Window**
 ```lua
 local Window = Library:AddWindow({
 	title = {"Vynixius", "UI Library"},
@@ -49,3 +51,4 @@ Library:AddWindow(<table> {
     <keycode> key
 })
 ```
+
