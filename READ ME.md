@@ -27,3 +27,25 @@ local Window = Library:AddWindow({
 	default = true
 })
 ```
+
+U can follow this format:
+
+
+```txt
+Library:AddWindow(<table> {
+    <table> title {
+        <string> title1
+        <string> title2
+    }
+    <table> theme {
+        <color3> Accent
+        <color3> TopbarColor
+        <color3> SidebarColor
+        <color3> BackgroundColor
+        <color3> SectionColor
+        <color3> TextColor
+    }  -> optional
+    <bool> default
+    <keycode> key
+})
+```
