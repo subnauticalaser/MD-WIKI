@@ -15,7 +15,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
 
 ### Step 2
 
-### **Library TUT**
+### **Library**
 
 
 #### **Create Window**
@@ -66,3 +66,36 @@ Library:Notify(<table> {
 ```
 
 
+### **Window**
+
+#### **Create Tab**
+
+```lua
+local Tab = Window:AddTab("Tab", {default = false})
+```
+
+U can follow this format:
+
+```txt
+Window:AddTab(<table> {
+    <string> name
+    <table> options {
+        <bool> default
+    } 
+})
+```
+
+
+#### **Changing Window**
+
+
+##### **Accent**
+```lua
+Window:SetAccent(color)
+```
+
+format:
+
+```txt
+Window:SetAccent(<color3> accent)
+```
