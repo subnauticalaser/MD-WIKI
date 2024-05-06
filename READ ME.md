@@ -11,4 +11,4 @@ To create a heading, add one to six <span style="backgroundcolor: #f6f8fa">`#`</
 ### A third-level heading
 ```
 
-<img src="/assets/cb-11432/images/help/writing/headings-rendered.png" alt="Screenshot of rendered GitHub Markdown showing sample h1, h2, and h3 headers, which descend in type size and visual weight to indicate descending hierarchy level."></img>
+<img src="https://docs.github.com/assets/cb-11432/mw-1440/images/help/writing/headings-rendered.webp" alt="Screenshot of rendered GitHub Markdown showing sample h1, h2, and h3 headers, which descend in type size and visual weight to indicate descending hierarchy level." />
