@@ -137,3 +137,18 @@ Tab:AddSection(<table> {
     }
 })
 ```
+
+
+#### **Changing Tab**
+
+##### **Show**
+
+```txt
+Tab:Show()
+```
+
+##### **Hide**
+
+```txt
+Tab:Hide()
+```
