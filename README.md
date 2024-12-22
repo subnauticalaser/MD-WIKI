@@ -1,14 +1,17 @@
-# README for SubnauticaLaser-Script LICENSE
-
-## Custom License Agreement for SubnauticaLaser-Script
+## Dual Licensing for SubnauticaLaser-Script
 
 **Copyright (c) 2024 SubnauticaLaser**
 
-This README explains the license terms for using the SubnauticaLaser-Script. Please read carefully before using, modifying, or sharing the script. By downloading, using, or interacting with this software, you agree to these terms.
+This README explains the dual licensing structure for the SubnauticaLaser-Script. The script is available under two different licenses:
+
+- **Custom License** (for most parts of the script)
+- **CC0-1.0 License** (for certain portions of the script, see details below)
 
 ---
 
-### **Usage Restrictions**
+### **Custom License Agreement for SubnauticaLaser-Script**
+
+For most parts of the script, the following **Custom License** applies:
 
 1. **Modification and Distribution**:
    - **Modification** of the script is **NOT allowed** without explicit written permission from SubnauticaLaser.
@@ -26,69 +29,43 @@ This README explains the license terms for using the SubnauticaLaser-Script. Ple
 
 ---
 
-### **Disclaimer**
+### **CC0-1.0 License Agreement for SubnauticaLaser-Script**
 
-THE SCRIPT IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.  
-This includes but is not limited to:
-- The **warranties of merchantability**, 
-- **Fitness for a particular purpose**,  
-- **Non-infringement** of rights.  
-
-The authors or copyright holders are **not liable** for:
-- Any claims, damages, or liabilities that arise from using the script.
-- Any issues caused by modifications or improper usage of the script.
-
----
-
-
-### **Terms of the CC0-1.0 License**
+The **CC0-1.0** license applies to certain portions of the script that have been explicitly dedicated to the public domain:
 
 1. **Usage, Modification, and Distribution**:
-   - You are **free to use**, **modify**, and **redistribute** the portions of the script licensed under CC0-1.0, **without any restrictions**.
+   - Portions of the script licensed under **CC0-1.0** may be freely **used**, **modified**, and **redistributed** without any restrictions.
    - No permission is required from SubnauticaLaser to use these portions in any manner, including commercial and non-commercial purposes.
 
 2. **Attribution**:
    - **Attribution is not required** under the CC0-1.0 License, but it is **recommended** as a courtesy to credit **SubnauticaLaser** if you choose.
-   - You may use these portions in your own projects without the obligation to mention or link to the original author, but giving credit is always appreciated.
 
 3. **Public Domain Dedication**:
-   - The portions of the script under this license are fully **dedicated to the public domain**, meaning you are free to use, modify, or distribute them in any way, without any legal or copyright restrictions.
+   - These portions of the script are fully **dedicated to the public domain**, meaning you are free to use, modify, or distribute them without any legal or copyright restrictions.
 
 ---
 
 ### **Disclaimer**
 
-THE PORTIONS OF THE SCRIPT LICENSED UNDER CC0-1.0 ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.  
+THE SCRIPT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.  
 This includes but is not limited to:
 - The **warranties of merchantability**, 
 - **Fitness for a particular purpose**,  
 - **Non-infringement** of rights.  
 
-SubnauticaLaser is **not liable** for any claims, damages, or liabilities arising from the use of these portions of the script.
+SubnauticaLaser is **not liable** for any claims, damages, or liabilities arising from the use of the script, including portions under either the **Custom License** or the **CC0-1.0 License**.
 
 ---
 
-### **Additional Information**
+### **Clarification on Licensing**
 
-These portions of the script are licensed under CC0-1.0 to allow for maximum freedom and flexibility in usage. However, the rest of the script, which is under the **Custom License**, still follows the restrictions and terms outlined in that section.
+- The **CC0-1.0 License** applies only to specific portions of the script. These portions are fully dedicated to the public domain and can be freely used, modified, or redistributed without any restrictions.
+- The **Custom License** applies to the remaining parts of the script. You may not modify or redistribute these parts without explicit written permission from SubnauticaLaser.
 
-
----
-
-
-### **Acceptance**
-
-By downloading, using, or interacting with the SubnauticaLaser-Script, you agree to all the terms and conditions outlined above.
-
----
-
-### **Contact**
-
-For any questions, permissions, or inquiries, please join the official Discord server:  
-[https://discord.gg/MbQk76T2Ch](https://discord.gg/MbQk76T2Ch)
+Please refer to the full **Custom License** and **CC0-1.0 License** files for further details.
 
 
 ---
-### This repository is dual-licensed under:
+### **LICENSES**
 - [Custom License](./LICENSE)
 - [CC0-1.0 License](./LICENSE.CC0)
