@@ -7,6 +7,8 @@ This README explains the dual licensing structure for the SubnauticaLaser-Script
 - **Custom License** (for most parts of the script)
 - **CC0-1.0 License** (for certain portions of the script, see details below)
 
+By downloading, using, or interacting with the script in any way, you agree to the terms outlined in both the **Custom License** and the **CC0-1.0 License**. If you do not agree to these terms, you may not download or use the script.
+
 ---
 
 ### **Custom License Agreement for SubnauticaLaser-Script**
@@ -26,6 +28,11 @@ For most parts of the script, the following **Custom License** applies:
 
 3. **Attribution**:
    - You must always provide clear and visible attribution to **SubnauticaLaser** as the creator of the script.
+
+4. **Agreement Clause**:
+   - By downloading, using, or interacting with this script, you acknowledge and agree to the above terms.
+   - Specifically, you understand that you **must obtain written permission** from SubnauticaLaser or an authorized server owner before creating or publishing videos or other public content featuring the script.
+   - You also understand that **redistribution** or **modification** of the script without explicit permission is **strictly prohibited**.
 
 ---
 
@@ -64,8 +71,9 @@ SubnauticaLaser is **not liable** for any claims, damages, or liabilities arisin
 
 Please refer to the full **Custom License** and **CC0-1.0 License** files for further details.
 
-
 ---
+
 ### **LICENSES**
 - [Custom License](./LICENSE)
 - [CC0-1.0 License](./LICENSE.CC0)
+
