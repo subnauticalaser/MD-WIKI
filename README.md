@@ -40,6 +40,42 @@ The authors or copyright holders are **not liable** for:
 
 ---
 
+
+### **Terms of the CC0-1.0 License**
+
+1. **Usage, Modification, and Distribution**:
+   - You are **free to use**, **modify**, and **redistribute** the portions of the script licensed under CC0-1.0, **without any restrictions**.
+   - No permission is required from SubnauticaLaser to use these portions in any manner, including commercial and non-commercial purposes.
+
+2. **Attribution**:
+   - **Attribution is not required** under the CC0-1.0 License, but it is **recommended** as a courtesy to credit **SubnauticaLaser** if you choose.
+   - You may use these portions in your own projects without the obligation to mention or link to the original author, but giving credit is always appreciated.
+
+3. **Public Domain Dedication**:
+   - The portions of the script under this license are fully **dedicated to the public domain**, meaning you are free to use, modify, or distribute them in any way, without any legal or copyright restrictions.
+
+---
+
+### **Disclaimer**
+
+THE PORTIONS OF THE SCRIPT LICENSED UNDER CC0-1.0 ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.  
+This includes but is not limited to:
+- The **warranties of merchantability**, 
+- **Fitness for a particular purpose**,  
+- **Non-infringement** of rights.  
+
+SubnauticaLaser is **not liable** for any claims, damages, or liabilities arising from the use of these portions of the script.
+
+---
+
+### **Additional Information**
+
+These portions of the script are licensed under CC0-1.0 to allow for maximum freedom and flexibility in usage. However, the rest of the script, which is under the **Custom License**, still follows the restrictions and terms outlined in that section.
+
+
+---
+
+
 ### **Acceptance**
 
 By downloading, using, or interacting with the SubnauticaLaser-Script, you agree to all the terms and conditions outlined above.
@@ -50,3 +86,9 @@ By downloading, using, or interacting with the SubnauticaLaser-Script, you agree
 
 For any questions, permissions, or inquiries, please join the official Discord server:  
 [https://discord.gg/MbQk76T2Ch](https://discord.gg/MbQk76T2Ch)
+
+
+---
+### This repository is dual-licensed under:
+- [Custom License](./LICENSE)
+- [CC0-1.0 License](./LICENSE.CC0)
