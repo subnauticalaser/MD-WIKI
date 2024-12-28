@@ -80,3 +80,10 @@ Please refer to the full **Custom License** and **CC0-1.0 License** files for fu
 ### **LICENSES**
 - [Custom License](./LICENSE)
 - [CC0-1.0 License](./LICENSE.CC0)
+
+
+## Images
+
+### CREDITS
+
+![Credits](Assets/Credits.png)
