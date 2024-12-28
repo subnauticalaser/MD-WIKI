@@ -29,7 +29,10 @@ For most parts of the script, the following **Custom License** applies:
 3. **Attribution**:
    - You must always provide clear and visible attribution to **SubnauticaLaser** as the creator of the script.
 
-4. **Agreement Clause**:
+4. **DMCA Enforcement**:
+   - Felixrnr Media Group, with the email address media@felixrnr.com, is authorized to issue DMCA takedown notices on behalf of SubnauticaLaser if this license agreement is violated.
+
+5. **Agreement Clause**:
    - By downloading, using, or interacting with this script, you acknowledge and agree to the above terms.
    - Specifically, you understand that you **must obtain written permission** from SubnauticaLaser or an authorized server owner before creating or publishing videos or other public content featuring the script.
    - You also understand that **redistribution** or **modification** of the script without explicit permission is **strictly prohibited**.
@@ -68,6 +71,7 @@ SubnauticaLaser is **not liable** for any claims, damages, or liabilities arisin
 
 - The **CC0-1.0 License** applies only to specific portions of the script. These portions are fully dedicated to the public domain and can be freely used, modified, or redistributed without any restrictions.
 - The **Custom License** applies to the remaining parts of the script. You may not modify or redistribute these parts without explicit written permission from SubnauticaLaser.
+- DMCA takedown enforcement will be managed by Felixrnr Media Group, which has full authority to act on any violations of the Custom License agreement.
 
 Please refer to the full **Custom License** and **CC0-1.0 License** files for further details.
 
@@ -76,4 +80,3 @@ Please refer to the full **Custom License** and **CC0-1.0 License** files for fu
 ### **LICENSES**
 - [Custom License](./LICENSE)
 - [CC0-1.0 License](./LICENSE.CC0)
-
