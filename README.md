@@ -1,6 +1,6 @@
 ## Dual Licensing for SubnauticaLaser-Script
 
-**Copyright (c) 2024 SubnauticaLaser**
+**Copyright (c) 2025 SubnauticaLaser**
 
 This README explains the dual licensing structure for the SubnauticaLaser-Script. The script is available under two different licenses:
 
