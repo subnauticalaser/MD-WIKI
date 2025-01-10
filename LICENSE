@@ -1,4 +1,4 @@
-# Custom License Agreement for SubnauticaLaser-Script
+# SubnauticaLaser-Script License
 
 Copyright (c) 2025 SubnauticaLaser
 
@@ -6,7 +6,8 @@ This software and associated files (the "Script") are provided under the followi
 
 ---
 
-### **Primary License**  
+### Primary License
+
 The following terms govern the usage, modification, and distribution of this Script:
 
 1. **Usage Restrictions**:
@@ -26,21 +27,32 @@ The following terms govern the usage, modification, and distribution of this Scr
 4. **DMCA Enforcement**:
    - Felixrnr Media Group, with the email address media@felixrnr.com, is authorized to issue DMCA takedown notices on behalf of SubnauticaLaser if this license agreement is violated.
 
+5. **CoreScript Identity Protection (Level 6-7)**:
+   - The Script incorporates functionalities that operate at **Identity Levels 6-7**, which are strictly reserved for **CoreScripts** within the Roblox ecosystem.
+   - **Reverse engineering** or any attempts to bypass, modify, or replicate the CoreScript-level functionality is **strictly prohibited**.
+   - Users found attempting to reverse engineer or misuse the Script\u2019s CoreScript-level features will:
+     - Be **permanently banned** from the official Discord server.
+     - Lose access to the Script and all associated services.
+   - These measures are in place to protect the integrity and security of the Script\u2019s CoreScript-level operations.
+
 ---
 
-### **Supplemental License (CC0-1.0)**  
-Certain portions of this Script, as explicitly marked by the author in the source code, are dedicated to the public domain under the [CC0 1.0 Universal Public Domain Dedication](./LICENSE.CC0).
+### Supplemental License (CC0-1.0)
+
+Certain portions of this Script, as explicitly marked by the author in the source code, are dedicated to the public domain under the [CC0 1.0 Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/).
 
 The author has waived all copyright and related or neighboring rights to these specific portions of the Script. These public domain portions may be freely used, modified, and redistributed, subject to the CC0-1.0 license terms.
 
 ---
 
-### **Disclaimer**  
+### Disclaimer
+
 THE SCRIPT IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SCRIPT OR THE USE OR OTHER DEALINGS IN THE SCRIPT.
 
 ---
 
-### **Acceptance**  
+### Acceptance
+
 By downloading, using, or interacting with this Script, you agree to the above terms and conditions.
 
 For further inquiries, please contact the official Discord server at https://discord.gg/MbQk76T2Ch.
