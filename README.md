@@ -86,4 +86,4 @@ Please refer to the full **Custom License** and **CC0-1.0 License** files for fu
 
 ### CREDITS
 
-![Credits](Assets/Credits_2.png)
+![Credits](Assets/Credits_V2.png)
