@@ -1,1 +1,12 @@
-{"Version": "2.1.1"}
+{
+    "Version": "2.1.1",
+    "Games": {
+        "Piggy - Book 1": 4623386862,
+        "Piggy - Book 2": 5661005779
+    },
+    "Topbar": {
+        "IsPing-Enabled": true,
+        "IsFPS-Enabled": true,
+        "IsCenter-Enabled": true
+    }
+}
