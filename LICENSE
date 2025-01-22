@@ -52,6 +52,17 @@ The following terms govern the usage, modification, and distribution of this Scr
 
 ---
 
+#### Amendment to Section 2: Videos and Public Display
+
+   - **Prohibited Individuals**:
+     - Individuals listed in the `Blacklist.sl-blacklist-json` file are **strictly prohibited** from creating or publishing videos, streams, or any public display involving the Script, either in part or in full.
+   - **Enforcement Against Blacklisted Individuals**:
+     - If any individual named in the `Blacklist.sl-blacklist-json` file violates this restriction, SubnauticaLaser retains the right to:
+       - Pursue **legal action**, including claims for damages and seeking injunctive relief.
+       - Seek punitive measures for unauthorized public display of the Script.
+
+---
+
 ### Supplemental License (CC0-1.0)
 
 Certain portions of this Script, as explicitly marked by the author in the source code, are dedicated to the public domain under the [CC0 1.0 Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/).
