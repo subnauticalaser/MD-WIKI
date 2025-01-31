@@ -27,8 +27,8 @@ The following terms govern the usage, modification, and distribution of this Scr
 4. **DMCA Enforcement**:
    - Felixrnr Media Group, with the email address media@felixrnr.com, is authorized to issue DMCA takedown notices on behalf of SubnauticaLaser if this license agreement is violated.
 
-5. **CoreScript Identity Protection (Level 6-7)**:
-   - The Script incorporates custom functionalities that operate at **Identity Levels 6-7**, which are reserved for **CoreScript-like** operations within the Script itself. These levels are **not part of Roblox's native CoreScripts**, but are designed by SubnauticaLaser for critical features within the custom script.
+5. **CoreScript ThreadIdentity Protection (Level 3)**:
+   - The Script incorporates custom functionalities that operate at **ThreadIdentity Level 3**, which are reserved for **CoreScript-like** operations within the Script itself. These levels are **not part of Roblox's native CoreScripts**, but are designed by SubnauticaLaser for critical features within the custom script.
    - These higher identity levels are used to protect the **core functionality** of the Script, prevent unauthorized modifications, and ensure secure operation.
    - **Reverse engineering** or any attempts to bypass, modify, or replicate these core features is **strictly prohibited**.
    - Users found attempting to reverse engineer or misuse the Script’s custom CoreScript-level features will:
