@@ -1,3 +1,8 @@
+-- Full Credits too: 7GrandDad
+-- Main Script: https://github.com/7GrandDadPGN/VapeV4ForRoblox/blob/main/guis/rise.lua
+--
+-- Modified by: SubnauticaLaser
+
 local mainapi = {
 	Categories = {},
 	GUIColor = {
@@ -2759,7 +2764,7 @@ end
 function mainapi:UpdateGUI(hue, sat, val, default)
 	if self.Loaded == nil then return end
 	if not default and self.GUIColor.Rainbow then return end
-	if interface.Button.Enabled then
+	if true then
 		watermarkgradient.Color = ColorSequence.new({
 			ColorSequenceKeypoint.new(0, uipallet.SecondaryColor:Lerp(uipallet.MainColor, 0.34)),
 			ColorSequenceKeypoint.new(1, uipallet.SecondaryColor:Lerp(uipallet.MainColor, 0.64))
@@ -2776,7 +2781,7 @@ function mainapi:UpdateGUI(hue, sat, val, default)
 		end
 	end
 
-	if targetinfoobj.Button.Enabled then
+	if true then
 		targetinfogradient.Color = ColorSequence.new({
 			ColorSequenceKeypoint.new(0, color.Dark(self:RiseColor(targetinfobkg.AbsolutePosition / 2), 0.5)),
 			ColorSequenceKeypoint.new(1, color.Dark(self:RiseColor((targetinfobkg.AbsolutePosition + Vector2.new(0, 100)) / 2), 0.5))
