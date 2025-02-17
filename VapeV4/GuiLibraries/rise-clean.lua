@@ -1,8 +1,3 @@
--- Full Credits too: 7GrandDad
--- Main Script: https://github.com/7GrandDadPGN/VapeV4ForRoblox/blob/main/guis/rise.lua
---
--- Modified by: SubnauticaLaser
-
 local mainapi = {
 	Categories = {},
 	GUIColor = {
@@ -2650,7 +2645,517 @@ mainapi:Clean(clickgui:GetPropertyChangedSignal('Visible'):Connect(function()
 	end
 end))
 
+mainapi:CreateCategory({
+	Name = 'Search',
+	RiseIcon = 'U',
+	Font = 3
+})
+mainapi:CreateCategory({
+	Name = 'Player',
+	RealName = 'Utility',
+	RiseIcon = 'c'
+})
+mainapi:CreateCategory({
+	Name = 'Render',
+	RiseIcon = 'g'
+})
+mainapi:CreateCategory({
+	Name = 'Ghost',
+	RealName = 'Legit',
+	RiseIcon = 'f'
+})
+mainapi.Categories.Minigames = mainapi.Categories.Utility
+mainapi.Categories.Inventory = mainapi.Categories.Utility
 
+--[[
+	Profiles
+]]
+mainapi:CreateCategoryProfile({
+	Name = 'CaS',
+	RealName = 'Profiles',
+	RiseIcon = 'm',
+	Font = 3,
+	Size = UDim2.fromOffset(17, 10),
+	Position = UDim2.fromOffset(12, 16),
+	Placeholder = 'Type name'
+})
+
+mainapi:CreateCategoryTheme({
+	Name = 'Themes',
+	RiseIcon = 'U',
+	Font = 3
+})
+
+--[[
+	Friends
+]]
+local friends
+local friendscolor = {
+	Hue = 1,
+	Sat = 1,
+	Value = 1
+}
+local friendssettings = {
+	Name = 'Friends',
+	Size = UDim2.fromOffset(17, 16),
+	Placeholder = 'Roblox username',
+	Color = Color3.fromRGB(5, 134, 105),
+	Function = function()
+		friends.Update:Fire()
+		friends.ColorUpdate:Fire(friendscolor.Hue, friendscolor.Sat, friendscolor.Value)
+	end
+}
+friends = mainapi:CreateCategoryList(friendssettings)
+friends.Update = Instance.new('BindableEvent')
+friends.ColorUpdate = Instance.new('BindableEvent')
+friends:CreateToggle({
+	Name = 'Recolor visuals',
+	Darker = true,
+	Default = true,
+	Function = function()
+		friends.Update:Fire()
+		friends.ColorUpdate:Fire(friendscolor.Hue, friendscolor.Sat, friendscolor.Value)
+	end
+})
+friendscolor = friends:CreateColorSlider({
+	Name = 'Friends color',
+	Darker = true,
+	Function = function(hue, sat, val)
+		friendssettings.Color = Color3.fromHSV(hue, sat, val)
+		friends.ColorUpdate:Fire(hue, sat, val)
+	end
+})
+friends:CreateToggle({
+	Name = 'Use friends',
+	Darker = true,
+	Default = true,
+	Function = function()
+		friends.Update:Fire()
+		friends.ColorUpdate:Fire(friendscolor.Hue, friendscolor.Sat, friendscolor.Value)
+	end
+})
+mainapi:Clean(friends.Update)
+mainapi:Clean(friends.ColorUpdate)
+
+mainapi.Legit = mainapi:CreateLegit()
+mainapi.Categories.Main = mainapi:CreateGUI()
+
+--[[
+	Targets
+]]
+local targets
+targets = mainapi:CreateCategoryList({
+	Name = 'Targets',
+	Size = UDim2.fromOffset(17, 16),
+	Placeholder = 'Roblox username',
+	Function = function()
+		targets.Update:Fire()
+	end
+})
+targets.Update = Instance.new('BindableEvent')
+mainapi:Clean(targets.Update)
+
+mainapi.Categories.Main:CreateToggle({
+	Name = 'Teams by server',
+	Tooltip = 'Ignore players on your team designated by the server',
+	Default = true,
+	Function = function()
+		if mainapi.Libraries.entity and mainapi.Libraries.entity.Running then
+			mainapi.Libraries.entity.refresh()
+		end
+	end
+})
+mainapi.Categories.Main:CreateToggle({
+	Name = 'Use team color',
+	Tooltip = 'Uses the TeamColor property on players for render modules',
+	Default = true,
+	Function = function()
+		if mainapi.Libraries.entity and mainapi.Libraries.entity.Running then
+			mainapi.Libraries.entity.refresh()
+		end
+	end
+})
+
+
+--[[
+	GUI Settings
+]]
+
+mainapi.Categories.Main.Options['GUI bind indicator'] = mainapi.Categories.Main:CreateToggle({
+	Name = 'GUI bind indicator',
+	Default = true,
+	Tooltip = "Displays a message indicating your GUI upon injecting.\nI.E. 'Press RSHIFT to open GUI'"
+})
+mainapi.Notifications = mainapi.Categories.Main:CreateToggle({
+	Name = 'Notifications',
+	Tooltip = 'Shows notifications',
+	Default = true
+})
+local scaleslider = {
+	Object = {},
+	Value = 1
+}
+mainapi.Scale = mainapi.Categories.Main:CreateToggle({
+	Name = 'Auto rescale',
+	Default = true,
+	Function = function(callback)
+		scaleslider.Object.Visible = not callback
+		if callback then
+			scale.Scale = math.max(gui.AbsoluteSize.X / 1920, 0.6)
+		else
+			scale.Scale = scaleslider.Value
+		end
+	end
+})
+scaleslider = mainapi.Categories.Main:CreateSlider({
+	Name = 'Scale',
+	Min = 0.1,
+	Max = 2,
+	Decimal = 10,
+	Function = function(val, final)
+		if final and not mainapi.Scale.Enabled then
+			scale.Scale = val
+		end
+	end,
+	Default = 1,
+	Darker = true,
+	Visible = false
+})
+mainapi.Categories.Main:CreateDropdown({
+	Name = 'GUI Theme',
+	List = {'rise', 'new', 'old'},
+	Function = function(val, mouse)
+		if mouse then
+			writefile('newvape/profiles/gui.txt', val)
+			shared.vapereload = true
+			if shared.VapeDeveloper then
+				loadstring(readfile('newvape/loader.lua'), 'loader')()
+			else
+				loadstring(game:HttpGet('https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/'..readfile('newvape/profiles/commit.txt')..'/loader.lua', true))()
+			end
+		end
+	end
+})
+mainapi.RainbowSpeed = mainapi.Categories.Main:CreateSlider({
+	Name = 'Color speed',
+	Min = 0.1,
+	Max = 10,
+	Decimal = 10,
+	Default = 1,
+	Tooltip = 'Adjusts the speed of color values'
+})
+mainapi.RainbowUpdateSpeed = mainapi.Categories.Main:CreateSlider({
+	Name = 'Color update rate',
+	Min = 1,
+	Max = 144,
+	Default = 60,
+	Tooltip = 'Adjusts the update rate of color values',
+	Suffix = 'hz'
+})
+mainapi.Categories.Main:CreateButton({
+	Name = 'Reinject',
+	Function = function()
+		shared.vapereload = true
+		if shared.VapeDeveloper then
+			loadstring(readfile('newvape/loader.lua'), 'loader')()
+		else
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/'..readfile('newvape/profiles/commit.txt')..'/loader.lua', true))()
+		end
+	end
+})
+mainapi.Categories.Main:CreateButton({
+	Name = 'Uninject',
+	Function = function()
+		mainapi:Uninject()
+	end
+})
+
+--[[
+	Interface
+]]
+
+local interface = mainapi:CreateOverlay({
+	Name = 'RiseInterface',
+	Function = function()
+		mainapi:UpdateTextGUI()
+	end,
+	ExtraText = function()
+		return 'Modern'
+	end,
+	Tooltip = 'The clients interface with all information',
+	NoDrag = true
+})
+local interfaceshow = interface:CreateDropdown({
+	Name = 'Modules to Show',
+	List = {
+		'All',
+		'Exclude render',
+		'Only bound'
+	},
+	Function = function()
+		mainapi:UpdateTextGUI()
+	end
+})
+local interfacearraycolor = interface:CreateDropdown({
+	Name = 'ArrayList Color Mode',
+	List = {
+		'Fade',
+		'Breathe',
+		'Static'
+	},
+	Function = function()
+		mainapi:UpdateTextGUI()
+	end
+})
+local interfacebkg = interface:CreateDropdown({
+	Name = 'BackGround',
+	List = {
+		'Normal',
+		'Off'
+	},
+	Function = function()
+		mainapi:UpdateTextGUI()
+	end
+})
+local interfacebar = interface:CreateToggle({
+	Name = 'Sidebar',
+	Function = function()
+		mainapi:UpdateTextGUI()
+	end,
+	Default = true
+})
+local interfacesuffix = interface:CreateToggle({
+	Name = 'Suffix',
+	Function = function()
+		mainapi:UpdateTextGUI()
+	end,
+	Default = true
+})
+local interfacelowercase = interface:CreateToggle({
+	Name = 'Lowercase',
+	Function = function()
+		mainapi:UpdateTextGUI()
+	end
+})
+mainapi.ToggleNotifications = interface:CreateToggle({
+	Name = 'Toggle Notifications',
+	Default = true
+})
+interface.Button:Toggle()
+
+--[[
+	Interface Objects
+]]
+
+local InterfaceLabels = {}
+local watermark = Instance.new('TextLabel')
+watermark.Size = UDim2.fromOffset(70, 40)
+watermark.Position = UDim2.fromOffset(12, guiService:GetGuiInset().Y + 5)
+watermark.BackgroundTransparency = 1
+watermark.Text = 'Rise'
+watermark.TextColor3 = Color3.new(1, 1, 1)
+watermark.TextSize = 43
+watermark.TextXAlignment = Enum.TextXAlignment.Left
+watermark.TextYAlignment = Enum.TextYAlignment.Top
+watermark.FontFace = uipallet.FontSemiBold
+watermark.Parent = interface.Children
+local watermarkgradient = Instance.new('UIGradient')
+watermarkgradient.Color = ColorSequence.new({
+	ColorSequenceKeypoint.new(0, uipallet.SecondaryColor:Lerp(uipallet.MainColor, 0.34)),
+	ColorSequenceKeypoint.new(1, uipallet.SecondaryColor:Lerp(uipallet.MainColor, 0.64))
+})
+watermarkgradient.Parent = watermark
+local arrayholder = Instance.new('Frame')
+arrayholder.Size = UDim2.fromOffset(100, 100)
+arrayholder.Position = UDim2.new(1, -15, 0, 15)
+arrayholder.AnchorPoint = Vector2.new(1, 0)
+arrayholder.BackgroundTransparency = 1
+arrayholder.Parent = interface.Children
+local arraylayout = Instance.new('UIListLayout')
+arraylayout.SortOrder = Enum.SortOrder.LayoutOrder
+arraylayout.FillDirection = Enum.FillDirection.Vertical
+arraylayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
+arraylayout.VerticalAlignment = Enum.VerticalAlignment.Top
+arraylayout.Parent = arrayholder
+
+
+--[[
+	Target Info
+]]
+
+local targetinfo
+local targetinfoobj
+local targetinfobcolor
+targetinfoobj = mainapi:CreateOverlay({
+	Name = 'Target Info',
+	Function = function(callback)
+		if callback then
+			task.spawn(function()
+				repeat
+					targetinfo:UpdateInfo()
+					task.wait()
+				until not targetinfoobj.Button or not targetinfoobj.Button.Enabled
+			end)
+		end
+	end,
+	NoDrag = true
+})
+
+local targetinfobkg = Instance.new('Frame')
+targetinfobkg.Size = UDim2.fromOffset(295, 95)
+targetinfobkg.Position = UDim2.new(0.5, 0, 0.5, 95)
+targetinfobkg.AnchorPoint = Vector2.new(0.5, 0.5)
+targetinfobkg.BackgroundTransparency = 0.5
+targetinfobkg.Parent = targetinfoobj.Children
+local targetinfoscale = Instance.new('UIScale')
+targetinfoscale.Scale = 0
+targetinfoscale.Parent = targetinfobkg
+local targetinfogradient = Instance.new('UIGradient')
+targetinfogradient.Color = ColorSequence.new({
+	ColorSequenceKeypoint.new(0, color.Dark(uipallet.MainColor, 0.5)),
+	ColorSequenceKeypoint.new(1, color.Dark(uipallet.SecondaryColor, 0.5))
+})
+targetinfogradient.Rotation = 90
+targetinfogradient.Parent = targetinfobkg
+addCorner(targetinfobkg, UDim.new(0, 36))
+local targetinfoshot = Instance.new('ImageLabel')
+targetinfoshot.Size = UDim2.fromOffset(64, 64)
+targetinfoshot.Position = UDim2.new(0, 48, 0.5, 1)
+targetinfoshot.AnchorPoint = Vector2.new(0.5, 0.5)
+targetinfoshot.BackgroundTransparency = 1
+targetinfoshot.Image = 'rbxthumb://type=AvatarHeadShot&id=1&w=420&h=420'
+targetinfoshot.Parent = targetinfobkg
+addCorner(targetinfoshot, UDim.new(0, 14))
+local targetinfoname = Instance.new('TextLabel')
+targetinfoname.Size = UDim2.fromOffset(60, 30)
+targetinfoname.Position = UDim2.fromOffset(158, 21)
+targetinfoname.BackgroundTransparency = 1
+targetinfoname.Text = 'Rise'
+targetinfoname.TextSize = 26
+targetinfoname.TextXAlignment = Enum.TextXAlignment.Left
+targetinfoname.TextColor3 = uipallet.MainColor
+targetinfoname.FontFace = uipallet.Font
+targetinfoname.Parent = targetinfobkg
+local targetinfoextra = targetinfoname:Clone()
+targetinfoextra.Position = UDim2.fromOffset(94, 20)
+targetinfoextra.Text = 'Name:'
+targetinfoextra.TextColor3 = Color3.new(1, 1, 1)
+targetinfoextra.FontFace = uipallet.FontLight
+targetinfoextra.Parent = targetinfobkg
+local targetinfohealthtext = targetinfoname:Clone()
+targetinfohealthtext.Position = UDim2.fromOffset(232, 48)
+targetinfohealthtext.Text = '20.0'
+targetinfohealthtext.Parent = targetinfobkg
+local targetinfohealthbkg = Instance.new('Frame')
+targetinfohealthbkg.Name = 'HealthBKG'
+targetinfohealthbkg.Size = UDim2.fromOffset(130, 12)
+targetinfohealthbkg.Position = UDim2.fromOffset(94, 58)
+targetinfohealthbkg.BackgroundColor3 = color.Dark(uipallet.MainColor, 0.5)
+targetinfohealthbkg.BackgroundTransparency = 0.5
+targetinfohealthbkg.BorderSizePixel = 0
+targetinfohealthbkg.Parent = targetinfobkg
+addCorner(targetinfohealthbkg, UDim.new(0, 10))
+local targetinfohealth = targetinfohealthbkg:Clone()
+targetinfohealth.Size = UDim2.fromScale(0.8, 1)
+targetinfohealth.Position = UDim2.new()
+targetinfohealth.BackgroundColor3 = Color3.new(1, 1, 1)
+targetinfohealth.BackgroundTransparency = 0
+targetinfohealth.Parent = targetinfohealthbkg
+targetinfohealth:GetPropertyChangedSignal('Size'):Connect(function()
+	targetinfohealth.Visible = targetinfohealth.Size.X.Scale > 0.01
+end)
+local targetinfohealthgradient = Instance.new('UIGradient')
+targetinfohealthgradient.Color = ColorSequence.new({
+	ColorSequenceKeypoint.new(0, uipallet.MainColor),
+	ColorSequenceKeypoint.new(1, uipallet.SecondaryColor)
+})
+targetinfohealthgradient.Rotation = 90
+targetinfohealthgradient.Parent = targetinfohealth
+
+local targetinfodisplay = targetinfoobj:CreateToggle({
+	Name = 'Use Displayname',
+	Default = true
+})
+
+local lasthealth = 0
+local lastmaxhealth = 0
+local lastvisible
+targetinfo = {
+	Targets = {},
+	Object = targetinfobkg,
+	UpdateInfo = function(self)
+		local entitylib = mainapi.Libraries
+		if not entitylib then return end
+		for i, v in self.Targets do
+			if v < tick() then
+				self.Targets[i] = nil
+			end
+		end
+
+		local v, highest = nil, tick()
+		for i, check in self.Targets do
+			if check > highest then
+				v = i
+				highest = check
+			end
+		end
+
+		local visible = v ~= nil or mainapi.gui.ScaledGui.ClickGui.Visible
+		if v then
+			targetinfoname.Text = v.Player and (targetinfodisplay.Enabled and v.Player.DisplayName or v.Player.Name) or v.Character and v.Character.Name or targetinfoname.Text
+			targetinfoshot.Image = 'rbxthumb://type=AvatarHeadShot&id='..(v.Player and v.Player.UserId or 1)..'&w=420&h=420'
+
+			if not v.Character then
+				v.Health = v.Health or 0
+				v.MaxHealth = v.MaxHealth or 100
+			end
+
+			if self.LastTarget ~= v then
+				local size = math.max(getfontsize(targetinfoname.Text, 26, uipallet.FontSemiBold).X + 180, 295)
+				targetinfobkg.Size = UDim2.fromOffset(size, 95)
+				targetinfohealthbkg.Size = UDim2.fromOffset(size - 165, 12)
+				targetinfohealthtext.Position = UDim2.fromOffset(size - 63, 48)
+			end
+
+			if v.Health ~= lasthealth or v.MaxHealth ~= lastmaxhealth then
+				targetinfohealthtext.Text = string.format("%.1f", v.Health / 5)
+				tween:Tween(targetinfohealth, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {
+					Size = UDim2.fromScale(math.max(v.Health / v.MaxHealth, 0), 1)
+				})
+				if lasthealth > v.Health and self.LastTarget == v then
+					tween:Cancel(targetinfoshot)
+					targetinfoshot.Size = UDim2.fromOffset(56, 56)
+					targetinfoshot.ImageColor3 = Color3.new(1, 0, 0)
+					tween:Tween(targetinfoshot, TweenInfo.new(0.5, Enum.EasingStyle.Linear), {
+						ImageColor3 = Color3.new(1, 1, 1),
+						Size = UDim2.fromOffset(64, 64)
+					})
+				end
+				lasthealth = v.Health
+				lastmaxhealth = v.MaxHealth
+			end
+
+			if not v.Character then table.clear(v) end
+			self.LastTarget = v
+		end
+
+		if visible ~= lastvisible then
+			if visible then
+				tween:Tween(targetinfoscale, TweenInfo.new(0.85, Enum.EasingStyle.Elastic, Enum.EasingDirection.Out), {
+					Scale = 1
+				}, nil, true)
+			else
+				tween:Tween(targetinfoscale, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
+					Scale = 0
+				}, nil, true)
+			end
+			lastvisible = visible
+		end
+
+		return v
+	end
+}
+mainapi.Libraries.targetinfo = targetinfo
 
 function mainapi:UpdateTextGUI(afterload)
 	if not afterload and not mainapi.Loaded then return end
@@ -2764,7 +3269,7 @@ end
 function mainapi:UpdateGUI(hue, sat, val, default)
 	if self.Loaded == nil then return end
 	if not default and self.GUIColor.Rainbow then return end
-	if true then
+	if interface.Button.Enabled then
 		watermarkgradient.Color = ColorSequence.new({
 			ColorSequenceKeypoint.new(0, uipallet.SecondaryColor:Lerp(uipallet.MainColor, 0.34)),
 			ColorSequenceKeypoint.new(1, uipallet.SecondaryColor:Lerp(uipallet.MainColor, 0.64))
@@ -2781,7 +3286,7 @@ function mainapi:UpdateGUI(hue, sat, val, default)
 		end
 	end
 
-	if true then
+	if targetinfoobj.Button.Enabled then
 		targetinfogradient.Color = ColorSequence.new({
 			ColorSequenceKeypoint.new(0, color.Dark(self:RiseColor(targetinfobkg.AbsolutePosition / 2), 0.5)),
 			ColorSequenceKeypoint.new(1, color.Dark(self:RiseColor((targetinfobkg.AbsolutePosition + Vector2.new(0, 100)) / 2), 0.5))
